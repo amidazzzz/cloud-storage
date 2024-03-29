@@ -9,3 +9,4 @@ COPY build/libs/cloudStorage-0.0.1-SNAPSHOT-plain.jar ./application.jar
 COPY build/dependency ./libs
 
 ENTRYPOINT ["java", "-cp", "libs/*:application.jar", "com.amida.cloudStorage.CloudStorageApplication"]
+

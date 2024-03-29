@@ -1,0 +1,24 @@
+services:
+  app:
+    image: 'cloud-storage:v1.0'
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    container_name: cloud-storage-container
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/cloud_storage_db
+      - SPRING_DATASOURCE_USERNAME=cloud_storage_db
+      - SPRING_DATASOURCE_PASSWORD=123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:14'
+    container_name: db-postgres-container
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=cloud_storage_db
+      - POSTGRES_PASSWORD=123
