@@ -1,9 +1,17 @@
 spring:
     datasource:
-        url: "jdbc:postgresql://db:5432/cloud_storage_db"
+        url: "jdbc:postgresql://localhost:5432/cloud_storage_db"
         username: "postgres"
         password: "123"
     jpa:
         hibernate:
             ddl-auto: update
         show-sql: true
+    data:
+        redis:
+            host: localhost
+            port: 6379
+    session:
+        redis:
+            repository-type: default
+
