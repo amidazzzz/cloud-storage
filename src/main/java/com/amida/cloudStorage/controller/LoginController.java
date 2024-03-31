@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class LoginController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(){
         return "home";
     }
