@@ -1,4 +1,4 @@
 package com.amida.cloudStorage.service;
 
-public interface MinioService {
+public class MinioService {
 }

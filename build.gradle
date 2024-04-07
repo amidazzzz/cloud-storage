@@ -31,6 +31,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis:3.2.4'
 	implementation 'org.springframework.session:spring-session-data-redis'
 	implementation 'io.minio:minio:8.5.9'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'

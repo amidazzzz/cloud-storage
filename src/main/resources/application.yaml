@@ -15,3 +15,9 @@ spring:
         redis:
             repository-type: default
 
+minio:
+    url: http://localhost:9000
+    accessKey: root
+    secretKey: root
+    bucketName: user-files
+
