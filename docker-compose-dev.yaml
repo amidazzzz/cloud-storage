@@ -1,0 +1,33 @@
+services:
+  minio:
+    image: 'minio/minio'
+    container_name: minio-container
+    ports:
+      - "9000:9000"
+    environment:
+      MINIO_ACCESS_KEY: root
+      MINIO_SECRET_KEY: rootroot
+    volumes:
+      - minio_data:/data
+  db:
+    image: 'postgres:16'
+    container_name: db-postgres-container
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=cloud_storage_db
+      - POSTGRES_PASSWORD=123
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  redis:
+    image: 'redis:latest'
+    container_name: redis-container
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+volumes:
+  db_data:
+  redis_data: 
+  minio_data:
+

@@ -1,6 +1,6 @@
 services:
   app:
-    image: 'cloud-storage:v1.1'
+    image: 'cloud-storage:v1.4'
     build:
       context: .
     ports:
@@ -8,6 +8,7 @@ services:
     container_name: cloud-storage-container
     depends_on:
       - db
+      - minio
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/cloud_storage_db
       - SPRING_DATASOURCE_USERNAME=cloud_storage_db
@@ -15,7 +16,7 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:
-    image: 'postgres:14'
+    image: 'postgres:16'
     container_name: db-postgres-container
     ports:
       - "5433:5432"
@@ -32,7 +33,7 @@ services:
       - "9000:9000"
     environment:
       MINIO_ACCESS_KEY: root
-      MINIO_SECRET_KEY: root
+      MINIO_SECRET_KEY: rootroot
     volumes:
       - minio_data:/data
 

@@ -18,6 +18,6 @@ spring:
 minio:
     url: http://localhost:9000
     accessKey: root
-    secretKey: root
+    secretKey: rootroot
     bucketName: user-files
 
